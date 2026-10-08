@@ -1,0 +1,61 @@
+# Students
+students:
+  - name: Minerva McGonagall 
+    mac: 00:44:11:22:44:A7:2A
+  - name: Severus Snape
+    mac: 00:44:11:2F:33:D8:3C
+  - name: Albus Dumbledore
+    mac: 00:44:11:3F:22:C3:77
+
+# Courses
+courses:
+  - name: Potions
+    code: HGW101
+    state: ACTIVE
+    students:
+      - Severus Snape
+      - Albus Dumbledore
+    servers:
+      - name: Server 3
+        allowed_services:
+          - ssh
+          - web
+  - name: Transfiguration
+    code: HGW102
+    state: INACTIVE
+    students:
+      - Minerva McGonagall
+    servers:
+      - name: Server 3
+        allowed_services:
+          - ssh
+  - name: Defence Against the Dark Arts
+    code: HGW103
+    state: ACTIVE
+    students:
+      - Albus Dumbledore
+    servers:
+      - name: Server 4
+        allowed_services:
+          - ssh
+
+# Servers
+servers:
+  - name: Server 3
+    ip: 10.0.0.3
+    services:
+      - name: ssh
+        protocol: TCP
+        port: 22
+      - name: web
+        protocol: TCP
+        port: 80
+      - name: dev
+        protocol: TCP
+        port: 3000
+  - name: Server 4
+    ip: 10.0.0.4
+    services:
+      - name: ssh
+        protocol: TCP
+        port: 22
